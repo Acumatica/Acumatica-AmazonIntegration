@@ -1,0 +1,135 @@
+﻿<GenericInquiryScreen>
+    <data-set>
+        <relations format-version="3" relations-version="20180809" main-table="GIDesign">
+            <link from="GIFilter (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GIGroupBy (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GIMassAction (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GIMassUpdateField (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GINavigationScreen (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GINavigationParameter (DesignID, ScreenID)" to="GINavigationScreen (DesignID, ScreenID)" />
+            <link from="GIOn (DesignID, RelationNbr)" to="GIRelation (DesignID, LineNbr)" />
+            <link from="GIRecordDefault (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GIRelation (DesignID, ParentTable)" to="GITable (DesignID, Alias)" />
+            <link from="GIRelation (DesignID, ChildTable)" to="GITable (DesignID, Alias)" />
+            <link from="GIResult (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GIResult (ObjectName, DesignID)" to="GITable (Alias, DesignID)" />
+            <link from="GISort (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GITable (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GIWhere (DesignID)" to="GIDesign (DesignID)" />
+            <link from="SiteMap (Url)" to="GIDesign (DesignID)" type="WeakByUrl" linkname="toDesignById" baseurl="~/GenericInquiry/GenericInquiry.aspx" paramnames="id" />
+            <link from="SiteMap (Url)" to="GIDesign (Name)" type="WeakByUrl" linkname="toDesignByName" baseurl="~/GenericInquiry/GenericInquiry.aspx" />
+            <link from="ListEntryPoint (ListScreenID)" to="SiteMap (ScreenID)" />
+            <link from="SiteMap (ScreenID)" to="GIDesign (PrimaryScreenIDNew)" linkname="to1Screen" />
+            <link from="SiteMap (NodeID)" to="SiteMap (ParentID)" type="WeakToParent" recursive-nesting="yes" />
+            <link from="GIDesign (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIFilter (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIFilter (NoteID)" to="GIFilterKvExt (RecordID)" type="RowKvExt" />
+            <link from="GIGroupBy (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIOn (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIRelation (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIResult (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIResult (NoteID)" to="GIResultKvExt (RecordID)" type="RowKvExt" />
+            <link from="GISort (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GITable (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIWhere (NoteID)" to="Note (NoteID)" type="Note" />
+        </relations>
+        <layout>
+            <table name="GIDesign">
+                <table name="GIFilter" uplink="(DesignID) = (DesignID)">
+                    <table name="Note" uplink="(NoteID) = (NoteID)" />
+                    <table name="GIFilterKvExt" uplink="(NoteID) = (RecordID)" />
+                </table>
+                <table name="GIGroupBy" uplink="(DesignID) = (DesignID)">
+                    <table name="Note" uplink="(NoteID) = (NoteID)" />
+                </table>
+                <table name="GIMassAction" uplink="(DesignID) = (DesignID)" />
+                <table name="GIMassUpdateField" uplink="(DesignID) = (DesignID)" />
+                <table name="GINavigationScreen" uplink="(DesignID) = (DesignID)">
+                    <table name="GINavigationParameter" uplink="(DesignID, ScreenID) = (DesignID, ScreenID)" />
+                </table>
+                <table name="GIRecordDefault" uplink="(DesignID) = (DesignID)" />
+                <table name="GISort" uplink="(DesignID) = (DesignID)">
+                    <table name="Note" uplink="(NoteID) = (NoteID)" />
+                </table>
+                <table name="GITable" uplink="(DesignID) = (DesignID)">
+                    <table name="GIRelation" uplink="(DesignID, Alias) = (DesignID, ParentTable)">
+                        <table name="GIOn" uplink="(DesignID, LineNbr) = (DesignID, RelationNbr)">
+                            <table name="Note" uplink="(NoteID) = (NoteID)" />
+                        </table>
+                        <table name="Note" uplink="(NoteID) = (NoteID)" />
+                    </table>
+                    <table name="GIResult" uplink="(Alias, DesignID) = (ObjectName, DesignID)">
+                        <table name="Note" uplink="(NoteID) = (NoteID)" />
+                        <table name="GIResultKvExt" uplink="(NoteID) = (RecordID)" />
+                    </table>
+                    <table name="Note" uplink="(NoteID) = (NoteID)" />
+                </table>
+                <table name="GIWhere" uplink="(DesignID) = (DesignID)">
+                    <table name="Note" uplink="(NoteID) = (NoteID)" />
+                </table>
+                <table name="SiteMap" uplink="(DesignID) = (Url)" recursion="(NodeID) = (ParentID)" linkname="toDesignById">
+                    <table name="ListEntryPoint" uplink="(ScreenID) = (ListScreenID)" />
+                </table>
+                <table name="SiteMap" uplink="(Name) = (Url)" recursion="(NodeID) = (ParentID)" linkname="toDesignByName">
+                    <table name="ListEntryPoint" uplink="(ScreenID) = (ListScreenID)" />
+                </table>
+                <table name="SiteMap" uplink="(PrimaryScreenIDNew) = (ScreenID)" recursion="(NodeID) = (ParentID)" linkname="to1Screen">
+                    <table name="ListEntryPoint" uplink="(ScreenID) = (ListScreenID)" />
+                </table>
+                <table name="Note" uplink="(NoteID) = (NoteID)" />
+            </table>
+        </layout>
+        <data>
+            <GIDesign>
+                <row DesignID="297a468e-827c-4ce3-8a52-af067d55961a" Name="Amazon SH Detailed Log" FilterColCount="3" PageSize="0" NewRecordCreationEnabled="0" MassDeleteEnabled="0" AutoConfirmDelete="0" MassRecordsUpdateEnabled="0" MassActionsOnRecordsEnabled="0" ExposeViaOData="0" ExposeViaMobile="0">
+                    <GIFilter LineNbr="3" IsActive="1" Name="IntegrationID" FieldName="SOsubmitDetailedProcessLog.integrationID" DataType="string" DisplayName="Integration ID" IsExpression="0" ColSpan="1" Required="0" LabelSize="S" />
+                    <GIFilter LineNbr="2" IsActive="1" Name="ToDate" FieldName="SOSubmitProcessLog.processDate" DataType="string" DisplayName="To Date" IsExpression="1" DefaultValue="@WeekEnd" ColSpan="1" Required="0" Size="SM" LabelSize="XS" />
+                    <GIFilter LineNbr="1" IsActive="1" Name="FromDate" FieldName="SOSubmitProcessLog.ProcessDate" DataType="string" DisplayName="From Date" IsExpression="1" DefaultValue="@WeekStart" ColSpan="1" Required="0" Size="SM" LabelSize="XS" />
+                    <GITable Alias="SOSubmitProcessLog" Name="AmazonIntegration.SOSubmitProcessLog">
+                        <GIRelation LineNbr="2" ChildTable="SOAmazonSetup" IsActive="1" JoinType="I">
+                            <GIOn LineNbr="3" ParentField="integrationID" Condition="E " ChildField="integrationID" Operation="A" />
+                        </GIRelation>
+                    </GITable>
+                    <GITable Alias="SOsubmitDetailedProcessLog" Name="AmazonIntegration.SOSubmitDetailedProcessLog">
+                        <GIRelation LineNbr="4" ChildTable="SOShipment" IsActive="1" JoinType="I">
+                            <GIOn LineNbr="5" ParentField="acumaticaShipmentNbr" Condition="E " ChildField="shipmentNbr" Operation="A" />
+                        </GIRelation>
+                        <GIRelation LineNbr="3" ChildTable="SOOrder" IsActive="1" JoinType="I">
+                            <GIOn LineNbr="4" ParentField="acumaticaOrderNbr" Condition="E " ChildField="orderNbr" Operation="A" />
+                        </GIRelation>
+                        <GIRelation LineNbr="1" ChildTable="SOSubmitProcessLog" IsActive="1" JoinType="I">
+                            <GIOn LineNbr="2" ParentField="integrationID" Condition="E " ChildField="integrationID" Operation="A" />
+                            <GIOn LineNbr="1" ParentField="processID" Condition="E " ChildField="processID" Operation="A" />
+                        </GIRelation>
+                        <GIResult LineNbr="7" SortOrder="7" IsActive="1" Field="errorDesc" Caption="Error Message" Width="200" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="1" RowID="826e3fdd-742c-42a9-85be-cf26a7cbd54a" />
+                        <GIResult LineNbr="2" SortOrder="2" IsActive="1" Field="amazonOrderID" Width="130" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="1" RowID="84c69349-bb47-4146-842d-8acdfebf3e4e" />
+                        <GIResult LineNbr="1" SortOrder="1" IsActive="1" Field="ProcessID" Width="100" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="1" RowID="bfaf3d22-997b-4ba2-a5a3-ea6f198bba70" />
+                    </GITable>
+                    <GITable Alias="SOShipment" Name="PX.Objects.SO.SOShipment">
+                        <GIResult LineNbr="6" SortOrder="6" IsActive="1" Field="shipmentNbr" Caption="Acumatica Shipment Nbr." Width="170" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="1" RowID="1c4f0510-c381-444e-a036-ba7ee8fd2783" />
+                    </GITable>
+                    <GITable Alias="SOOrder" Name="PX.Objects.SO.SOOrder">
+                        <GIResult LineNbr="4" SortOrder="4" IsActive="1" Field="orderNbr" Caption="Acumatica Sales Order Nbr." Width="170" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="1" RowID="f446ded7-f634-40f9-9b13-e2e6bfa8b1d1" />
+                    </GITable>
+                    <GITable Alias="SOAmazonSetup" Name="AmazonIntegration.SOAmazonSetup" />
+                    <GIWhere LineNbr="3" IsActive="1" DataFieldName="SOsubmitDetailedProcessLog.integrationID" Condition="E " IsExpression="0" Value1="[IntegrationID]" Operation="A" />
+                    <GIWhere LineNbr="2" IsActive="1" DataFieldName="SOsubmitDetailedProcessLog.importStatus" Condition="E " IsExpression="0" Value1="=False" Operation="A" />
+                    <GIWhere LineNbr="1" IsActive="1" DataFieldName="SOSubmitProcessLog.processDate" Condition="B " IsExpression="0" Value1="[FromDate]" Value2="[ToDate]" Operation="A" />
+                    <SiteMap linkname="toDesignById">
+                        <row Position="15" Title="Amazon Shipment Detailed Log" Url="~/GenericInquiry/GenericInquiry.aspx?id=297a468e-827c-4ce3-8a52-af067d55961a" Expanded="0" IsFolder="0" ScreenID="AZ000013" NodeID="b6fb6d74-79c4-4a6e-a2ec-1b2672a96d3a" ParentID="a24f88e1-8602-4ede-ad7f-85e3899764f9">
+                            <SiteMap Position="126" Title="Explore" Expanded="1" IsFolder="0" NodeID="a24f88e1-8602-4ede-ad7f-85e3899764f9">
+                                <SiteMap Position="589" Title="Work Area" Description="main@DataEntryF" Expanded="1" IsFolder="0" NodeID="de0d5687-3c67-4ec7-94e9-2c3e5225f817">
+                                    <SiteMap Position="516" Title="Sales Orders" Url="~/Frames/Default.aspx" Expanded="0" IsFolder="0" ScreenID="SO000000" NodeID="ff2d3fd4-ab02-43c9-ad02-aad212542770">
+                                        <SiteMap Position="30" Title="Distribution" Url="~/Frames/Default.aspx" Expanded="0" IsFolder="0" ScreenID="DS000000" NodeID="91d578ba-75b6-4fa9-a532-9457a6383a62">
+                                            <SiteMap Position="0" Title="Sitemap Root" Url="~/Frames/Default.aspx" Expanded="0" IsFolder="0" ScreenID="00000000" NodeID="00000000-0000-0000-0000-000000000000" />
+                                        </SiteMap>
+                                    </SiteMap>
+                                </SiteMap>
+                            </SiteMap>
+                        </row>
+                    </SiteMap>
+                </row>
+            </GIDesign>
+        </data>
+    </data-set>
+</GenericInquiryScreen>

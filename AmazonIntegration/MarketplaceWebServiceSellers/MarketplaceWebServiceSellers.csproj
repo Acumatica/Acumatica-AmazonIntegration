@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8DBA1F93-39FB-4997-8634-FB7A1406895D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarketplaceWebServiceSellers</RootNamespace>
+    <AssemblyName>MarketplaceWebServiceSellers</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MarketplaceWebServiceSellers\MarketplaceWebServiceSellers.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\MarketplaceWebServiceSellersClient.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\MarketplaceWebServiceSellersConfig.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\MarketplaceWebServiceSellersException.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\MarketplaceWebServiceSellersSample.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Mock\MarketplaceWebServiceSellersMock.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\GetServiceStatusRequest.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\GetServiceStatusResponse.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\GetServiceStatusResult.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\HasSellerSuspendedListingsEnum.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\IMWSResponse.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\ListMarketplaceParticipationsByNextTokenRequest.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\ListMarketplaceParticipationsByNextTokenResponse.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\ListMarketplaceParticipationsByNextTokenResult.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\ListMarketplaceParticipationsRequest.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\ListMarketplaceParticipationsResponse.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\ListMarketplaceParticipationsResult.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\ListMarketplaces.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\ListParticipations.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\Marketplace.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\Message.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\MessageList.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\Participation.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\ResponseHeaderMetadata.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\ResponseMetadata.cs" />
+    <Compile Include="MarketplaceWebServiceSellers\Model\ServiceStatusEnum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MarketplaceWebServiceSellers\Mock\MarketplaceWebServiceSellers.Model.GetServiceStatusResponse.xml" />
+    <Content Include="MarketplaceWebServiceSellers\Mock\MarketplaceWebServiceSellers.Model.ListMarketplaceParticipationsByNextTokenResponse.xml" />
+    <Content Include="MarketplaceWebServiceSellers\Mock\MarketplaceWebServiceSellers.Model.ListMarketplaceParticipationsResponse.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MWSClientCsRuntime\MWSClientCsRuntime.csproj">
+      <Project>{f396d511-9dad-4423-b039-0ae883ac3da5}</Project>
+      <Name>MWSClientCsRuntime</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7EC21D81-F988-4BB6-990C-635F521BD444}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AmazonIntegration</RootNamespace>
+    <AssemblyName>PX.AmazonIntegration</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PX.Common">
+      <HintPath>..\..\..\..\Program Files (x86)\Acumatica ERP\Acumatica2018R2MWS\Bin\PX.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Data">
+      <HintPath>..\..\..\..\Program Files (x86)\Acumatica ERP\Acumatica2018R2MWS\Bin\PX.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Objects">
+      <HintPath>..\..\..\..\Program Files (x86)\Acumatica ERP\Acumatica2018R2MWS\Bin\PX.Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Web.Customization">
+      <HintPath>..\..\..\..\Program Files (x86)\Acumatica ERP\Acumatica2018R2MWS\Bin\PX.Web.Customization.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AM\DAC\SOAmazonSetup.cs" />
+    <Compile Include="AM\DAC\SOLineAmazonExt.cs" />
+    <Compile Include="AM\DAC\SOOrderAmazonExt.cs" />
+    <Compile Include="AM\DAC\SOShipLineAmazonExt.cs" />
+    <Compile Include="AM\DAC\SOShipmentAmazonExt.cs" />
+    <Compile Include="AM\DAC\SOSubmitDetailedProcessLog.cs" />
+    <Compile Include="AM\DAC\SOSubmitProcessLog.cs" />
+    <Compile Include="AM\DAC\SOThrottleConstants.cs" />
+    <Compile Include="AM\Descriptor\AMShipmentTrackingNumberServiceCall.cs" />
+    <Compile Include="AM\Descriptor\AMSubmitFeedServiceCall.cs" />
+    <Compile Include="AM\Descriptor\OrderTypeSelector.cs" />
+    <Compile Include="AM\GraphExtension\SOOrderEntryAmazonExt.cs" />
+    <Compile Include="AM\GraphExtension\SOSetupMaintAmazonExt.cs" />
+    <Compile Include="AM\SOAmazonSetupMaint.cs" />
+    <Compile Include="AM\SOGetFBATrackingNumberProcess.cs" />
+    <Compile Include="AM\SOImportClearLog.cs" />
+    <Compile Include="AM\SOPartialMaint.cs" />
+    <Compile Include="AM\SOImportProcess.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AM\SOScheduleProcess.cs" />
+    <Compile Include="AM\SOSubmitClearLog.cs" />
+    <Compile Include="AM\SOSubmitFeedProcess.cs" />
+    <Compile Include="AM\DAC\SOFieldMapping.cs" />
+    <Compile Include="AM\DAC\SOImportedRecords.cs" />
+    <Compile Include="AM\DAC\SOOrderLevelProcessLog.cs" />
+    <Compile Include="AM\DAC\SOOrderProcessLog.cs" />
+    <Compile Include="AM\DAC\SOPrepareAndImport.cs" />
+    <Compile Include="AM\DAC\SOProcessOrder.cs" />
+    <Compile Include="AM\Descriptor\SOConstants.cs" />
+    <Compile Include="AM\Descriptor\SOHelper.cs" />
+    <Compile Include="AM\Descriptor\SOLogService.cs" />
+    <Compile Include="AM\Descriptor\SOMessages.cs" />
+    <Compile Include="AM\Descriptor\SOOrdersServiceCall.cs" />
+    <Compile Include="AM\Descriptor\SOServiceCalls.cs" />
+    <Compile Include="AM\DAC\SOSetupAmazonExt.cs" />
+    <Compile Include="AM\DAC\SOTaxAmazonExt.cs" />
+    <Compile Include="AM\Descriptor\CreateSO.cs" />
+    <Compile Include="AM\GraphExtension\SOInvoiceEntryAmazonExt.cs" />
+    <Compile Include="AM\ThrottleConstants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarketplaceWebServiceFeeds\MarketplaceWebServiceFeeds.csproj">
+      <Project>{d121d692-ff26-3836-8115-e63d9fc3a3b1}</Project>
+      <Name>MarketplaceWebServiceFeeds</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketplaceWebServiceOrders\MarketplaceWebServiceOrders.csproj">
+      <Project>{030bae9e-7503-4282-8a85-50dd5098f5f9}</Project>
+      <Name>MarketplaceWebServiceOrders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketplaceWebServiceSellers\MarketplaceWebServiceSellers.csproj">
+      <Project>{8dba1f93-39fb-4997-8634-fb7a1406895d}</Project>
+      <Name>MarketplaceWebServiceSellers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MWSClientCsRuntime\MWSClientCsRuntime.csproj">
+      <Project>{f396d511-9dad-4423-b039-0ae883ac3da5}</Project>
+      <Name>MWSClientCsRuntime</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

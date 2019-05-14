@@ -1,0 +1,5 @@
+﻿<Table TableName="SOOrder">
+    <Column TableName="SOOrder" ColumnName="UsrAmazonOrderID" ColumnType="string" AllowNull="True" MaxLength="50" DecimalPrecision="2" DecimalLength="50" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="SOOrder" ColumnName="UsrAmazonFreightTotal" ColumnType="decimal" AllowNull="True" MaxLength="19" DecimalPrecision="4" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="SOOrder" ColumnName="UsrAmazonFreightDiscountTotal" ColumnType="decimal" AllowNull="True" MaxLength="19" DecimalPrecision="4" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+</Table>

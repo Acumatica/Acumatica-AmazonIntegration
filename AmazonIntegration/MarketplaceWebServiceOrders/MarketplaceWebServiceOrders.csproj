@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{030BAE9E-7503-4282-8A85-50DD5098F5F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarketplaceWebServiceOrders</RootNamespace>
+    <AssemblyName>MarketplaceWebServiceOrders</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MarketplaceWebServiceOrders\MarketplaceWebServiceOrders.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\MarketplaceWebServiceOrdersClient.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\MarketplaceWebServiceOrdersConfig.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\MarketplaceWebServiceOrdersException.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\MarketplaceWebServiceOrdersSample.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Mock\MarketplaceWebServiceOrdersMock.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\Address.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\BuyerCustomizedInfoDetail.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\BuyerTaxInfo.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\GetOrderRequest.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\GetOrderResponse.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\GetOrderResult.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\GetServiceStatusRequest.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\GetServiceStatusResponse.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\GetServiceStatusResult.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\IMWSResponse.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\InvoiceData.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ListOrderItemsByNextTokenRequest.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ListOrderItemsByNextTokenResponse.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ListOrderItemsByNextTokenResult.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ListOrderItemsRequest.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ListOrderItemsResponse.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ListOrderItemsResult.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ListOrdersByNextTokenRequest.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ListOrdersByNextTokenResponse.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ListOrdersByNextTokenResult.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ListOrdersRequest.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ListOrdersResponse.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ListOrdersResult.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\Message.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\Money.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\Order.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\OrderItem.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\PaymentExecutionDetailItem.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\PointsGrantedDetail.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ResponseHeaderMetadata.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\ResponseMetadata.cs" />
+    <Compile Include="MarketplaceWebServiceOrders\Model\TaxClassification.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MarketplaceWebServiceOrders\Mock\MarketplaceWebServiceOrders.Model.GetOrderResponse.xml" />
+    <Content Include="MarketplaceWebServiceOrders\Mock\MarketplaceWebServiceOrders.Model.GetServiceStatusResponse.xml" />
+    <Content Include="MarketplaceWebServiceOrders\Mock\MarketplaceWebServiceOrders.Model.ListOrderItemsByNextTokenResponse.xml" />
+    <Content Include="MarketplaceWebServiceOrders\Mock\MarketplaceWebServiceOrders.Model.ListOrderItemsResponse.xml" />
+    <Content Include="MarketplaceWebServiceOrders\Mock\MarketplaceWebServiceOrders.Model.ListOrdersByNextTokenResponse.xml" />
+    <Content Include="MarketplaceWebServiceOrders\Mock\MarketplaceWebServiceOrders.Model.ListOrdersResponse.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MWSClientCsRuntime\MWSClientCsRuntime.csproj">
+      <Project>{f396d511-9dad-4423-b039-0ae883ac3da5}</Project>
+      <Name>MWSClientCsRuntime</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,16 @@
+﻿<Sql TableName="SOThrottleConstants" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="SOThrottleConstants">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="APIName" type="NVarChar(50)" />
+  <col name="DelayTime" type="Int" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedDateTime" type="DateTime" nullable="true" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="LastModifiedDateTime" type="DateTime" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_SOThrottleConstants" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="APIName" />
+  </index>
+</table>]]></CDATA>
+</Sql>

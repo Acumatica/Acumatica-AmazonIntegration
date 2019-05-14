@@ -1,0 +1,31 @@
+﻿<Sql TableName="SOProcessOrder" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="SOProcessOrder">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="LineNumber" type="Int" identity="true" />
+  <col name="ProcessID" type="Int" nullable="true" />
+  <col name="IntegrationID" type="NVarChar(30)" nullable="true" />
+  <col name="AmazonOrderID" type="NVarChar(50)" />
+  <col name="BuyerEmailID" type="NVarChar(100)" nullable="true" />
+  <col name="AmazonOrderDate" type="DateTime" nullable="true" />
+  <col name="AmazonOrderLastUpdated" type="DateTime" nullable="true" />
+  <col name="SynDatetime" type="DateTime" nullable="true" />
+  <col name="AmazonStatus" type="NVarChar(30)" nullable="true" />
+  <col name="OrderAmount" type="Decimal(18,2)" nullable="true" />
+  <col name="AmazonTrackingNumber" type="NVarChar(50)" nullable="true" />
+  <col name="Carrier" type="NVarChar(15)" nullable="true" />
+  <col name="PrepareStatus" type="Bit" nullable="true" />
+  <col name="ImportStatus" type="Bit" nullable="true" />
+  <col name="OrderSchema" type="NVarChar(MAX)" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <index name="PK_SOProcessOrder" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="LineNumber" />
+  </index>
+</table>]]></CDATA>
+</Sql>

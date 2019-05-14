@@ -1,0 +1,21 @@
+﻿<Sql TableName="SOOrderProcessLog" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="SOOrderProcessLog">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ProcessID" type="Int" identity="true" />
+  <col name="ParentProcessID" type="Int" nullable="true" />
+  <col name="ProcessDate" type="DateTime" />
+  <col name="Operation" type="NVarChar(20)" nullable="true" />
+  <col name="TotalRecordstoImport" type="Int" />
+  <col name="ImportedRecordsCount" type="Int" nullable="true" />
+  <col name="FailedRecordsCount" type="Int" nullable="true" />
+  <col name="IntegrationID" type="NVarChar(30)" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <index name="PK_SOOrderProcessLog" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ProcessID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

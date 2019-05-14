@@ -1,0 +1,4 @@
+﻿<Table TableName="SOShipment">
+    <Column TableName="SOShipment" ColumnName="UsrSubmitFeedupdate" ColumnType="bool" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="SOShipment" ColumnName="UsrAmazonCarrierCode" ColumnType="string" AllowNull="True" MaxLength="30" DecimalPrecision="2" DecimalLength="30" IsNewColumn="True" IsUnicode="True" />
+</Table>

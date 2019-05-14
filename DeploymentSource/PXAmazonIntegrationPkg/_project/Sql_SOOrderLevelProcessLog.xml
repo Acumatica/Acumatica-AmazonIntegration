@@ -1,0 +1,24 @@
+﻿<Sql TableName="SOOrderLevelProcessLog" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="SOOrderLevelProcessLog">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="LineNumber" type="Int" identity="true" />
+  <col name="ProcessID" type="Int" nullable="true" />
+  <col name="AmazonOrderID" type="NVarChar(50)" nullable="true" />
+  <col name="AcumaticaOrderID" type="NVarChar(15)" nullable="true" />
+  <col name="AcumaticaOrderType" type="Char(2)" nullable="true" />
+  <col name="ImportStatus" type="Bit" nullable="true" />
+  <col name="ErrorDesc" type="NVarChar(100)" nullable="true" />
+  <col name="IntegrationID" type="NVarChar(30)" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <index name="PK_SOOrderLevelProcessLog" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="LineNumber" />
+  </index>
+</table>]]></CDATA>
+</Sql>

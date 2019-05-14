@@ -1,0 +1,30 @@
+﻿<Sql TableName="SOAmazonSetup" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="SOAmazonSetup">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="IntegrationID" type="NVarChar(30)" />
+  <col name="Status" type="Bit" />
+  <col name="IntegrationType" type="Char(5)" nullable="true" />
+  <col name="Description" type="NVarChar(255)" nullable="true" />
+  <col name="OrderType" type="Char(2)" nullable="true" />
+  <col name="DfltWarehouseID" type="Int" />
+  <col name="SellerId" type="NVarChar(255)" />
+  <col name="AuthToken" type="NVarChar(512)" />
+  <col name="AccessKey" type="NVarChar(512)" />
+  <col name="SecretKey" type="NVarChar(512)" />
+  <col name="MarketplaceId" type="NVarChar(255)" nullable="true" />
+  <col name="FeedShipmentType" type="Bit" nullable="true" />
+  <col name="MappingFieldIdCntr" type="Int" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <index name="PK_SOAmazonSetup" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="IntegrationID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

@@ -1,0 +1,5 @@
+﻿<Table TableName="SOLine">
+    <Column TableName="SOLine" ColumnName="UsrAMOrderItemID" ColumnType="string" AllowNull="True" MaxLength="20" DecimalPrecision="2" DecimalLength="20" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="SOLine" ColumnName="UsrAmazonFreightAmt" ColumnType="decimal" AllowNull="True" MaxLength="19" DecimalPrecision="4" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="SOLine" ColumnName="UsrAmazonFreightDiscountAmt" ColumnType="decimal" AllowNull="True" MaxLength="19" DecimalPrecision="4" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+</Table>

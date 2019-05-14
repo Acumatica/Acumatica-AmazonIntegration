@@ -1,0 +1,120 @@
+﻿<GenericInquiryScreen>
+    <data-set>
+        <relations format-version="3" relations-version="20180809" main-table="GIDesign">
+            <link from="GIFilter (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GIGroupBy (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GIMassAction (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GIMassUpdateField (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GINavigationScreen (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GINavigationParameter (DesignID, ScreenID)" to="GINavigationScreen (DesignID, ScreenID)" />
+            <link from="GIOn (DesignID, RelationNbr)" to="GIRelation (DesignID, LineNbr)" />
+            <link from="GIRecordDefault (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GIRelation (DesignID, ParentTable)" to="GITable (DesignID, Alias)" />
+            <link from="GIRelation (DesignID, ChildTable)" to="GITable (DesignID, Alias)" />
+            <link from="GIResult (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GIResult (ObjectName, DesignID)" to="GITable (Alias, DesignID)" />
+            <link from="GISort (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GITable (DesignID)" to="GIDesign (DesignID)" />
+            <link from="GIWhere (DesignID)" to="GIDesign (DesignID)" />
+            <link from="SiteMap (Url)" to="GIDesign (DesignID)" type="WeakByUrl" linkname="toDesignById" baseurl="~/GenericInquiry/GenericInquiry.aspx" paramnames="id" />
+            <link from="SiteMap (Url)" to="GIDesign (Name)" type="WeakByUrl" linkname="toDesignByName" baseurl="~/GenericInquiry/GenericInquiry.aspx" />
+            <link from="ListEntryPoint (ListScreenID)" to="SiteMap (ScreenID)" />
+            <link from="SiteMap (ScreenID)" to="GIDesign (PrimaryScreenIDNew)" linkname="to1Screen" />
+            <link from="SiteMap (NodeID)" to="SiteMap (ParentID)" type="WeakToParent" recursive-nesting="yes" />
+            <link from="GIDesign (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIFilter (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIFilter (NoteID)" to="GIFilterKvExt (RecordID)" type="RowKvExt" />
+            <link from="GIGroupBy (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIOn (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIRelation (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIResult (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIResult (NoteID)" to="GIResultKvExt (RecordID)" type="RowKvExt" />
+            <link from="GISort (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GITable (NoteID)" to="Note (NoteID)" type="Note" />
+            <link from="GIWhere (NoteID)" to="Note (NoteID)" type="Note" />
+        </relations>
+        <layout>
+            <table name="GIDesign">
+                <table name="GIFilter" uplink="(DesignID) = (DesignID)">
+                    <table name="Note" uplink="(NoteID) = (NoteID)" />
+                    <table name="GIFilterKvExt" uplink="(NoteID) = (RecordID)" />
+                </table>
+                <table name="GIGroupBy" uplink="(DesignID) = (DesignID)">
+                    <table name="Note" uplink="(NoteID) = (NoteID)" />
+                </table>
+                <table name="GIMassAction" uplink="(DesignID) = (DesignID)" />
+                <table name="GIMassUpdateField" uplink="(DesignID) = (DesignID)" />
+                <table name="GINavigationScreen" uplink="(DesignID) = (DesignID)">
+                    <table name="GINavigationParameter" uplink="(DesignID, ScreenID) = (DesignID, ScreenID)" />
+                </table>
+                <table name="GIRecordDefault" uplink="(DesignID) = (DesignID)" />
+                <table name="GISort" uplink="(DesignID) = (DesignID)">
+                    <table name="Note" uplink="(NoteID) = (NoteID)" />
+                </table>
+                <table name="GITable" uplink="(DesignID) = (DesignID)">
+                    <table name="GIRelation" uplink="(DesignID, Alias) = (DesignID, ParentTable)">
+                        <table name="GIOn" uplink="(DesignID, LineNbr) = (DesignID, RelationNbr)">
+                            <table name="Note" uplink="(NoteID) = (NoteID)" />
+                        </table>
+                        <table name="Note" uplink="(NoteID) = (NoteID)" />
+                    </table>
+                    <table name="GIResult" uplink="(Alias, DesignID) = (ObjectName, DesignID)">
+                        <table name="Note" uplink="(NoteID) = (NoteID)" />
+                        <table name="GIResultKvExt" uplink="(NoteID) = (RecordID)" />
+                    </table>
+                    <table name="Note" uplink="(NoteID) = (NoteID)" />
+                </table>
+                <table name="GIWhere" uplink="(DesignID) = (DesignID)">
+                    <table name="Note" uplink="(NoteID) = (NoteID)" />
+                </table>
+                <table name="SiteMap" uplink="(DesignID) = (Url)" recursion="(NodeID) = (ParentID)" linkname="toDesignById">
+                    <table name="ListEntryPoint" uplink="(ScreenID) = (ListScreenID)" />
+                </table>
+                <table name="SiteMap" uplink="(Name) = (Url)" recursion="(NodeID) = (ParentID)" linkname="toDesignByName">
+                    <table name="ListEntryPoint" uplink="(ScreenID) = (ListScreenID)" />
+                </table>
+                <table name="SiteMap" uplink="(PrimaryScreenIDNew) = (ScreenID)" recursion="(NodeID) = (ParentID)" linkname="to1Screen">
+                    <table name="ListEntryPoint" uplink="(ScreenID) = (ListScreenID)" />
+                </table>
+                <table name="Note" uplink="(NoteID) = (NoteID)" />
+            </table>
+        </layout>
+        <data>
+            <GIDesign>
+                <row DesignID="8b43ce2f-04b9-431d-9348-e5082162d940" Name="Amazon SH Process Log" FilterColCount="3" PageSize="0" NewRecordCreationEnabled="0" MassDeleteEnabled="0" AutoConfirmDelete="0" MassRecordsUpdateEnabled="0" MassActionsOnRecordsEnabled="0" ExposeViaOData="0" ExposeViaMobile="0">
+                    <GIFilter LineNbr="3" IsActive="1" Name="IntegrationID" FieldName="FeedProcessLog.integrationID" DataType="string" DisplayName="Integration ID" IsExpression="0" ColSpan="1" Required="0" LabelSize="S" />
+                    <GIFilter LineNbr="2" IsActive="1" Name="ToDate" FieldName="FeedProcessLog.processDate" DataType="string" DisplayName="To Date" IsExpression="1" DefaultValue="@WeekEnd" ColSpan="1" Required="0" Size="SM" LabelSize="XS" />
+                    <GIFilter LineNbr="1" IsActive="1" Name="FormDate" FieldName="FeedProcessLog.processDate" DataType="string" DisplayName="From Date" IsExpression="1" DefaultValue="@WeekStart" ColSpan="1" Required="0" Size="SM" LabelSize="XS" />
+                    <GITable Alias="FeedProcessLog" Name="AmazonIntegration.SOSubmitProcessLog">
+                        <GIResult LineNbr="6" SortOrder="6" IsActive="1" Field="submitFailedRecordsCount" Caption="Total Records Failed" Width="160" IsVisible="1" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="b4b8b01f-1a5d-4562-8a9c-91941add3e03" />
+                        <GIResult LineNbr="5" SortOrder="5" IsActive="1" Field="submitRecordsCount" Caption="Total Records Submitted" Width="160" IsVisible="1" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="f0d390ba-19e5-46b1-82f8-89f084140586" />
+                        <GIResult LineNbr="4" SortOrder="4" IsActive="1" Field="totalRecordstoProcess" Caption="Total Records to Process" Width="160" IsVisible="1" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="a66923ad-6221-4cfc-92bb-d1be631c20f7" />
+                        <GIResult LineNbr="3" SortOrder="3" IsActive="1" Field="integrationID" Caption="Integration ID" Width="120" IsVisible="1" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="297a8f68-4502-42d5-9852-97420cf8047a" />
+                        <GIResult LineNbr="2" SortOrder="2" IsActive="1" Field="processID" Caption="Process ID" Width="100" IsVisible="1" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="82f23011-97f3-4981-b69a-2dc87750e123" />
+                        <GIResult LineNbr="1" SortOrder="1" IsActive="1" Field="ProcessDate" Caption="Process Date" Width="110" IsVisible="1" DefaultNav="0" QuickFilter="0" FastFilter="0" RowID="690adcaa-93e5-4d64-b1ab-f82de62df23c" />
+                    </GITable>
+                    <GITable Alias="AMSetup" Name="AmazonIntegration.SOAmazonSetup">
+                        <GIRelation LineNbr="1" ChildTable="FeedProcessLog" IsActive="1" JoinType="L">
+                            <GIOn LineNbr="1" ParentField="integrationID" Condition="E " ChildField="integrationID" Operation="A" />
+                        </GIRelation>
+                    </GITable>
+                    <GIWhere LineNbr="2" IsActive="1" DataFieldName="FeedProcessLog.processDate" Condition="B " IsExpression="0" Value1="[FormDate]" Value2="[ToDate]" Operation="A" />
+                    <GIWhere LineNbr="1" IsActive="1" DataFieldName="FeedProcessLog.integrationID" Condition="E " IsExpression="0" Value1="[IntegrationID]" Operation="A" />
+                    <SiteMap linkname="toDesignById">
+                        <row Position="14" Title="Amazon Shipment Process Log" Url="~/GenericInquiry/GenericInquiry.aspx?id=8b43ce2f-04b9-431d-9348-e5082162d940" Expanded="0" IsFolder="0" ScreenID="AZ000012" NodeID="62d2ff06-f77a-4b19-8f00-d8f35f5d0377" ParentID="a24f88e1-8602-4ede-ad7f-85e3899764f9">
+                            <SiteMap Position="126" Title="Explore" Expanded="1" IsFolder="0" NodeID="a24f88e1-8602-4ede-ad7f-85e3899764f9">
+                                <SiteMap Position="589" Title="Work Area" Description="main@DataEntryF" Expanded="1" IsFolder="0" NodeID="de0d5687-3c67-4ec7-94e9-2c3e5225f817">
+                                    <SiteMap Position="516" Title="Sales Orders" Url="~/Frames/Default.aspx" Expanded="0" IsFolder="0" ScreenID="SO000000" NodeID="ff2d3fd4-ab02-43c9-ad02-aad212542770">
+                                        <SiteMap Position="30" Title="Distribution" Url="~/Frames/Default.aspx" Expanded="0" IsFolder="0" ScreenID="DS000000" NodeID="91d578ba-75b6-4fa9-a532-9457a6383a62">
+                                            <SiteMap Position="0" Title="Sitemap Root" Url="~/Frames/Default.aspx" Expanded="0" IsFolder="0" ScreenID="00000000" NodeID="00000000-0000-0000-0000-000000000000" />
+                                        </SiteMap>
+                                    </SiteMap>
+                                </SiteMap>
+                            </SiteMap>
+                        </row>
+                    </SiteMap>
+                </row>
+            </GIDesign>
+        </data>
+    </data-set>
+</GenericInquiryScreen>
