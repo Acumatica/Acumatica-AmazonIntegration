@@ -26,15 +26,6 @@
                         <AddItem>
                             <PXSelector TypeFullName="PX.Web.UI.PXSelector">
                                 <Prop Key="Virtual:ApplyStylesheetSkin" />
-                                <Prop Key="DataField" Value="UsrGuestCustID" />
-                                <Prop Key="AllowEdit" Value="True" />
-                                <Prop Key="CommitChanges" Value="True" />
-                                <Prop Key="ID" Value="CstPXSelector1" />
-                            </PXSelector>
-                        </AddItem>
-                        <AddItem>
-                            <PXSelector TypeFullName="PX.Web.UI.PXSelector">
-                                <Prop Key="Virtual:ApplyStylesheetSkin" />
                                 <Prop Key="DataField" Value="UsrAmazonTaxZoneID" />
                                 <Prop Key="AllowEdit" Value="True" />
                                 <Prop Key="ID" Value="edTaxZoneID" />

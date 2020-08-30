@@ -78,12 +78,11 @@ namespace AmazonIntegration
             SOOrder newOrder = new SOOrder();
             if (orderParams.objSOOrderEntry.sosetup.Current != null)
             {
-                SOSetupAmazonExt objSOOSetupext = orderParams.objSOOrderEntry.sosetup.Current.GetExtension<SOSetupAmazonExt>();
-                if (objSOOSetupext != null && objSOOSetupext.UsrGuestCustID.HasValue)
+                if (orderParams.objSOAmazonSetup.GuestCustID.HasValue)
                 {
                     newOrder.OrderType = orderParams.objSOAmazonSetup.OrderType;
                     newOrder = (SOOrder)orderParams.objSOOrderEntry.Document.Cache.Insert(newOrder);
-                    newOrder.CustomerID = objSOOSetupext.UsrGuestCustID;
+                    newOrder.CustomerID = orderParams.objSOAmazonSetup.GuestCustID;
                 }
                 else
                     throw new PXException(SOMessages.guestCustomerErrorMsg);

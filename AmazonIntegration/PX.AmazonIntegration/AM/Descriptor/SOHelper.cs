@@ -296,7 +296,7 @@ namespace AmazonIntegration
         }
         internal static bool IsSOPreferencesDetailsExist(SOOrderEntry orderEntry,  SOSetupAmazonExt objSOOSetupext)
         {
-            if (orderEntry.sosetup.Current != null && objSOOSetupext != null && objSOOSetupext.UsrGuestCustID.HasValue 
+            if (orderEntry.sosetup.Current != null && objSOOSetupext != null 
                 && !string.IsNullOrEmpty(objSOOSetupext.UsrAmazonTaxZoneID) && !string.IsNullOrEmpty(objSOOSetupext.UsrAmazonTaxID) 
                 && !string.IsNullOrEmpty(objSOOSetupext.UsrAmazonShipVia) && !string.IsNullOrEmpty(objSOOSetupext.UsrAmazonPaymentMethodID) && objSOOSetupext.UsrAmazonInitialFromDate !=null)
                 return true;

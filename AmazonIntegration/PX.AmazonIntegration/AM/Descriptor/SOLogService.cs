@@ -68,7 +68,7 @@ namespace AmazonIntegration
                 logRecord.AcumaticaOrderType = orderParams.objSOOrderEntry.Document.Current != null ? orderParams.objSOOrderEntry.Document.Current.OrderType : null;
                 logRecord.AcumaticaOrderID = orderParams.objSOOrderEntry.Document.Current != null ? orderParams.objSOOrderEntry.Document.Current.OrderNbr : null;
                 logRecord.ImportStatus = importOrderStatus;
-                logRecord.ErrorDesc = errorlog;
+                logRecord.ErrorDesc = errorlog.Truncate(100);
                 orderParams.objSOPartialMaint.OrderLevelProcessLog.Current = logRecord;
                 orderParams.objSOPartialMaint.OrderLevelProcessLog.Insert(orderParams.objSOPartialMaint.OrderLevelProcessLog.Current);
                 orderParams.objSOPartialMaint.Actions.PressSave();
@@ -178,5 +178,14 @@ namespace AmazonIntegration
             objParams.objPartialMaint.UpdateFeedProcessLog.Update(processUpdateCount);
         }
         #endregion
+    }
+
+    public static class StringExt
+    {
+        public static string Truncate(this string value, int maxLength)
+        {
+            if (string.IsNullOrEmpty(value)) return value;
+            return value.Length <= maxLength ? value : value.Substring(0, maxLength);
+        }
     }
 }

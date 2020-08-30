@@ -34,16 +34,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PX.Common">
-      <HintPath>..\..\..\..\Program Files (x86)\Acumatica ERP\Acumatica2018R2MWS\Bin\PX.Common.dll</HintPath>
+      <HintPath>D:\AcumaticaSites\19.203.0042\49thPilot\Bin\PX.Common.dll</HintPath>
     </Reference>
     <Reference Include="PX.Data">
-      <HintPath>..\..\..\..\Program Files (x86)\Acumatica ERP\Acumatica2018R2MWS\Bin\PX.Data.dll</HintPath>
+      <HintPath>D:\AcumaticaSites\19.203.0042\49thPilot-Portal\Bin\PX.Data.dll</HintPath>
     </Reference>
     <Reference Include="PX.Objects">
-      <HintPath>..\..\..\..\Program Files (x86)\Acumatica ERP\Acumatica2018R2MWS\Bin\PX.Objects.dll</HintPath>
+      <HintPath>D:\AcumaticaSites\19.203.0042\49thPilot\Bin\PX.Objects.dll</HintPath>
     </Reference>
     <Reference Include="PX.Web.Customization">
-      <HintPath>..\..\..\..\Program Files (x86)\Acumatica ERP\Acumatica2018R2MWS\Bin\PX.Web.Customization.dll</HintPath>
+      <HintPath>D:\AcumaticaSites\19.203.0042\49thPilot\Bin\PX.Web.Customization.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

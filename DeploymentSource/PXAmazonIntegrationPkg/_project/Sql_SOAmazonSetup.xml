@@ -1,11 +1,13 @@
 ﻿<Sql TableName="SOAmazonSetup" TableSchemaXml="#CDATA">
-    <CDATA name="TableSchemaXml"><![CDATA[<table name="SOAmazonSetup">
+    <CDATA name="TableSchemaXml">
+    <![CDATA[<table name="SOAmazonSetup">
   <col name="CompanyID" type="Int" default="Zero" />
   <col name="IntegrationID" type="NVarChar(30)" />
   <col name="Status" type="Bit" />
   <col name="IntegrationType" type="Char(5)" nullable="true" />
   <col name="Description" type="NVarChar(255)" nullable="true" />
   <col name="OrderType" type="Char(2)" nullable="true" />
+  <col name="GuestCustID" type="Int" />
   <col name="DfltWarehouseID" type="Int" />
   <col name="SellerId" type="NVarChar(255)" />
   <col name="AuthToken" type="NVarChar(512)" />

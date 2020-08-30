@@ -3,3 +3,9 @@
 ################################################################################
 
 /AmazonIntegration/MarketplaceWebServiceFeeds/obj
+/AmazonIntegration/MarketplaceWebServiceOrders/obj/Debug
+/AmazonIntegration/MarketplaceWebServiceSellers/obj/Debug
+/AmazonIntegration/MWSClientCsRuntime/obj
+/AmazonIntegration/PX.AmazonIntegration/obj/Debug
+/.vs
+/AmazonIntegration/.vs/PX.AmazonIntegration/v16

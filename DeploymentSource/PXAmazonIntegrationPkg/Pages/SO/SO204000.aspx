@@ -22,6 +22,7 @@
             <px:PXSelector runat="server" ID="AMCstPXSelectorIntegrationID" DataField="IntegrationID" AutoRefresh="true"></px:PXSelector>
             <px:PXCheckBox ID="AMchkIsActiveStatus" CommitChanges="True" runat="server" DataField="Status" Width="90px"></px:PXCheckBox>
             <px:PXDropDown CommitChanges="True" runat="server" ID="AMCstPXDropDownIntegrationType" DataField="IntegrationType"></px:PXDropDown>
+            <px:PXSegmentMask ID="AMCstPXSelectorCust" runat="server" AllowEdit="True" CommitChanges="True" DataField="GuestCustID"></px:PXSegmentMask>
             <px:PXSelector runat="server" ID="AMCstPXSelectorDfltWarehouse" DataField="DfltWarehouseID" CommitChanges="true" AllowEdit="true"></px:PXSelector>
             <px:PXSelector runat="server" ID="AMCstPXSelectorOrderType" DataField="OrderType" CommitChanges="true" AutoRefresh="true" AllowEdit="true"></px:PXSelector>
             <px:PXLayoutRule runat="server" ColumnSpan="2" />

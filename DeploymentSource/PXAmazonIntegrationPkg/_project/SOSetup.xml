@@ -1,5 +1,4 @@
 ﻿<Table TableName="SOSetup">
-    <Column TableName="SOSetup" ColumnName="UsrGuestCustID" ColumnType="int" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
     <Column TableName="SOSetup" ColumnName="UsrAmazonTaxID" ColumnType="string" AllowNull="True" MaxLength="30" DecimalPrecision="2" DecimalLength="30" IsNewColumn="True" IsUnicode="True" />
     <Column TableName="SOSetup" ColumnName="UsrAmazonPaymentMethodID" ColumnType="string" AllowNull="True" MaxLength="10" DecimalPrecision="2" DecimalLength="10" IsNewColumn="True" IsUnicode="True" />
     <Column TableName="SOSetup" ColumnName="UsrAmazonTaxZoneID" ColumnType="string" AllowNull="True" MaxLength="10" DecimalPrecision="2" DecimalLength="10" IsNewColumn="True" IsUnicode="True" />

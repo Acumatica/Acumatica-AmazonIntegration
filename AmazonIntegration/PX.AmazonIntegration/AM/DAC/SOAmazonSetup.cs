@@ -64,6 +64,15 @@ namespace AmazonIntegration
 
         #endregion
 
+        #region CustID
+
+        [CustomerActive(DescriptionField = typeof(Customer.acctName), DisplayName = "Customer ID")]
+        [PXDefault()]
+        public virtual int? GuestCustID { get; set; }
+        public abstract class guestCustID : IBqlField { }
+
+        #endregion
+
         #region DfltWarehouseID
 
         public abstract class dfltWarehouseID : IBqlField { }
