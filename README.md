@@ -13,7 +13,7 @@ Seller sells and Amazon ships. Seller sends bulk products to Amazon’s fulfillm
 Seller lists the products on Amazon while handling storage and all aspects of order fulfillment. When products are sold, the integration imports FBM orders as sales orders. The seller is required to pick, pack, and ship products included on such orders. Shipment/Fulfilment details needs to be submitted back to Amazon using the integration. Amazon Orders with status Unshipped are retrieved during the import process.
 
 ### Prerequisites
-* Acumatica 2018 R2 (18.204.0013+) or higher
+* Acumatica 2019 R2 (18.210.0026+) or higher
 * Inventory/Stock, Products and Customers has to be setup prior using this integration. Product/Stock Item needs to be setup in Acumatica by either having matching Inventory ID OR Cross-Reference (Alternate ID) same as Amazon SellerSKU/ASIN (specified in Marketplace Configuration Field Mapping) 
 * This integration requires “Amazon Seller Professional Account” credentials for configuring integrations. Please visit (https://developer.amazonservices.com/) for more information on getting MWS Credentials.
 
@@ -39,7 +39,6 @@ Navigate to Sales Order Preferences (SO101000) -> Amazon Configuration Tab and s
 
  | Element               | Description |
  | :---                  | :--- |
- | **Guest Customer ID** | All imported Amazon orders will be associated to this specified customer.  |
  | **Tax Zone ID**       | This Tax ID will be default Tax ID to all imported Amazon orders. The details will be shown in Sales Order form’s Tax details tab. <ul><li>Only taxes which are created with the option “Propagate Manually Set Tax Amount from Sales Orders to Invoice” can be selected as default Tax ID</ul></li> |
  | **Payment Method ID** | This Payment Method will be applied to all imported Amazon orders. The details will be shown in Sales Order form’s Payments tab. |
  | **Ship Via**          | This Ship Via method will be applied to all imported Amazon orders. The details will be shown in Sales Order form’s Shipping settings tab. |
@@ -58,6 +57,7 @@ Marketplace Configuration Screen is used to control various features of the Inte
 | **Integration ID** | You can set a unique value that can be used to identify all the configuration details in other screens related to this integration ID. |
 | **Status** | This field is used to mark a specific Integration as Active / Inactive. If the integration is marked as Inactive, then system will not display the details/logs related to this specific integration. |
 | **Integration Type** | Available Integration Types : <ul><li>Amazon FBA</li><li>Amazon.ca FBA</li><li>Amazon.co.uk FBA</li><li>Amazon.de FBA</li><li>Amazon.jp FBA</li><li>Amazon.in FBA</li><li>Amazon FBM</li></ul> |
+| **Guest Customer ID** | All imported Amazon orders will be associated to this specified customer.  |
 | **Warehouse** | All active warehouses will be loaded from the system to select specific warehouse in Acumatica for order processing. All the imported orders under this specific integration will be associated to this configured warehouse by default. |
 | **Order Type** | All the active order types will be loaded from the system to select specific Order type. Based on the selected integration type these order type template will be loaded for selection. <ul><li>For FBA integrations types the system will display the “IN – Invoice” type templates for the selection, whereas for FBM Integration type it will display “SO – Sales Order” template order types.</li></ul> |
 | **Seller ID** | This field is used to configure the Amazon Marketplace Seller ID. |
@@ -205,8 +205,13 @@ Known Issues
 ------------
 None at the moment
 
+Upgrades from Master
+------------
+* Allow for customer to be assigned to a particular Amazon store
+* Truncate errors to 100 characters to avoid SQL error when capturing error to log
+
 ## Copyright and License
 
-Copyright © `2019` `Acumatica`
+Copyright © `2020` `Acumatica`
 
 This component is licensed under the MIT License, a copy of which is available online [here](LICENSE.md)
