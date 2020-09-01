@@ -125,7 +125,7 @@ namespace AmazonIntegration
         public const string Item = "Item";
         public const string FBMType = "FBM  ";      
 
-        public class AMSyncNote : Constant<string>
+        public class AMSyncNote : PX.Data.BQL.BqlString.Constant<AMSyncNote>
         {
             public AMSyncNote() : base(SOMessages.syncNote) { }
         }
@@ -133,29 +133,29 @@ namespace AmazonIntegration
         #endregion
 
         #region Bql constants
-        public class InvoiceType : Constant<string>
+        public class InvoiceType : PX.Data.BQL.BqlString.Constant<InvoiceType>
         {
             public InvoiceType() : base("IN") { }
         }
-        public class SalesOrderType : Constant<string>
+        public class SalesOrderType : PX.Data.BQL.BqlString.Constant<SalesOrderType>
         {
             public SalesOrderType() : base("SO") { }
         }
-        public class IntegrationType : Constant<string>
+        public class IntegrationType : PX.Data.BQL.BqlString.Constant<IntegrationType>
         {
             public IntegrationType() : base(AMIntegrationType.FBM) { }
         }
 
-        public class FBMMessage : Constant<string>
+        public class FBMMessage : PX.Data.BQL.BqlString.Constant<FBMMessage>
         {
             public FBMMessage() : base(SOMessages.fbmNote) { }
         }
 
-        public class InitialFromDate : Constant<string>
+        public class InitialFromDate : PX.Data.BQL.BqlString.Constant<InitialFromDate>
         {
             public InitialFromDate() : base(SOMessages.InitialFromDateNote) { }
         }
-        public class FBMIntegrationType : Constant<string>
+        public class FBMIntegrationType : PX.Data.BQL.BqlString.Constant<FBMIntegrationType>
         {
             public FBMIntegrationType() : base(SOConstants.FBMType) { }
         }        
@@ -164,7 +164,7 @@ namespace AmazonIntegration
 
         #region Integration Type Constants
 
-        public class AMIntegrationType
+        public static class AMIntegrationType
         {
             public class ListAttribute : PXStringListAttribute
             {
@@ -182,31 +182,31 @@ namespace AmazonIntegration
             public const string INFBA = "INFBA";
             public const string FBM = "FBM";
 
-            public class fBA : Constant<string>
+            public class fBA : PX.Data.BQL.BqlString.Constant<fBA>
             {
                 public fBA() : base(FBA) { }
             }
-            public class caFBA : Constant<string>
+            public class caFBA : PX.Data.BQL.BqlString.Constant<caFBA>
             {
                 public caFBA() : base(CAFBA) { }
             }
-            public class ukFBA : Constant<string>
+            public class ukFBA : PX.Data.BQL.BqlString.Constant<ukFBA>
             {
                 public ukFBA() : base(UKFBA) { }
             }
-            public class dEFBA : Constant<string>
+            public class dEFBA : PX.Data.BQL.BqlString.Constant<dEFBA>
             {
                 public dEFBA() : base(DEFBA) { }
             }
-            public class jPFBA : Constant<string>
+            public class jPFBA : PX.Data.BQL.BqlString.Constant<jPFBA>
             {
                 public jPFBA() : base(JPFBA) { }
             }
-            public class iNFBA : Constant<string>
+            public class iNFBA : PX.Data.BQL.BqlString.Constant<iNFBA>
             {
                 public iNFBA() : base(INFBA) { }
             }
-            public class fBM : Constant<string>
+            public class fBM : PX.Data.BQL.BqlString.Constant<fBM>
             {
                 public fBM() : base(FBM) { }
             }

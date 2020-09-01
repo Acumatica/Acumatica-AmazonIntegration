@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SerilogTimings</name>
+    </assembly>
+    <members>
+        <member name="T:SerilogTimings.Operation">
+            <summary>
+            Records operation timings to the Serilog log.
+            </summary>
+            <remarks>
+            Static members on this class are thread-safe. Instances
+            of <see cref="T:SerilogTimings.Operation"/> are designed for use on a single thread only.
+            </remarks>
+        </member>
+        <member name="T:SerilogTimings.Operation.Properties">
+            <summary>
+            Property names attached to events by <see cref="T:SerilogTimings.Operation"/>s.
+            </summary>
+        </member>
+        <member name="F:SerilogTimings.Operation.Properties.Elapsed">
+            <summary>
+            The timing, in milliseconds.
+            </summary>
+        </member>
+        <member name="F:SerilogTimings.Operation.Properties.Outcome">
+            <summary>
+            Completion status, either <em>completed</em> or <em>discarded</em>.
+            </summary>
+        </member>
+        <member name="F:SerilogTimings.Operation.Properties.OperationId">
+            <summary>
+            A unique identifier added to the log context during
+            the operation.
+            </summary>
+        </member>
+        <member name="M:SerilogTimings.Operation.Begin(System.String,System.Object[])">
+            <summary>
+            Begin a new timed operation. The return value must be completed using <see cref="M:SerilogTimings.Operation.Complete"/>,
+            or disposed to record abandonment.
+            </summary>
+            <param name="messageTemplate">A log message describing the operation, in message template format.</param>
+            <param name="args">Arguments to the log message. These will be stored and captured only when the
+            operation completes, so do not pass arguments that are mutated during the operation.</param>
+            <returns>An <see cref="T:SerilogTimings.Operation"/> object.</returns>
+        </member>
+        <member name="M:SerilogTimings.Operation.Time(System.String,System.Object[])">
+            <summary>
+            Begin a new timed operation. The return value must be disposed to complete the operation.
+            </summary>
+            <param name="messageTemplate">A log message describing the operation, in message template format.</param>
+            <param name="args">Arguments to the log message. These will be stored and captured only when the
+            operation completes, so do not pass arguments that are mutated during the operation.</param>
+            <returns>An <see cref="T:SerilogTimings.Operation"/> object.</returns>
+        </member>
+        <member name="M:SerilogTimings.Operation.At(Serilog.Events.LogEventLevel,System.Nullable{Serilog.Events.LogEventLevel})">
+            <summary>
+            Configure the logging levels used for completion and abandonment events.
+            </summary>
+            <param name="completion">The level of the event to write on operation completion.</param>
+            <param name="abandonment">The level of the event to write on operation abandonment; if not
+            specified, the <paramref name="completion"/> level will be used.</param>
+            <returns>An object from which timings with the configured levels can be made.</returns>
+            <remarks>If neither <paramref name="completion"/> nor <paramref name="abandonment"/> is enabled
+            on the logger at the time of the call, a no-op result is returned.</remarks>
+        </member>
+        <member name="M:SerilogTimings.Operation.Complete">
+            <summary>
+            Complete the timed operation. This will write the event and elapsed time to the log.
+            </summary>
+        </member>
+        <member name="M:SerilogTimings.Operation.Complete(System.String,System.Object,System.Boolean)">
+            <summary>
+            Complete the timed operation with an included result value.
+            </summary>
+            <param name="resultPropertyName">The name for the property to attach to the event.</param>
+            <param name="result">The result value.</param>
+            <param name="destructureObjects">If true, the property value will be destructured (serialized).</param>
+        </member>
+        <member name="M:SerilogTimings.Operation.Cancel">
+            <summary>
+            Cancel the timed operation. After calling, no event will be recorded either through
+            completion or disposal.
+            </summary>
+        </member>
+        <member name="M:SerilogTimings.Operation.Dispose">
+            <summary>
+            Dispose the operation. If not already completed or canceled, an event will be written
+            with timing information. Operations started with <see cref="M:SerilogTimings.Operation.Time(System.String,System.Object[])"/> will be completed through
+            disposal. Operations started with <see cref="M:SerilogTimings.Operation.Begin(System.String,System.Object[])"/> will be recorded as abandoned.
+            </summary>
+        </member>
+        <member name="T:SerilogTimings.Configuration.LevelledOperation">
+            <summary>
+            Launches <see cref="T:SerilogTimings.Operation"/>s with non-default completion and abandonment levels.
+            </summary>
+            <seealso cref="M:SerilogTimings.Operation.At(Serilog.Events.LogEventLevel,System.Nullable{Serilog.Events.LogEventLevel})"/>
+        </member>
+        <member name="M:SerilogTimings.Configuration.LevelledOperation.Begin(System.String,System.Object[])">
+            <summary>
+            Begin a new timed operation. The return value must be completed using <see cref="M:SerilogTimings.Operation.Complete"/>,
+            or disposed to record abandonment.
+            </summary>
+            <param name="messageTemplate">A log message describing the operation, in message template format.</param>
+            <param name="args">Arguments to the log message. These will be stored and captured only when the
+            operation completes, so do not pass arguments that are mutated during the operation.</param>
+            <returns>An <see cref="T:SerilogTimings.Operation"/> object.</returns>
+        </member>
+        <member name="M:SerilogTimings.Configuration.LevelledOperation.Time(System.String,System.Object[])">
+            <summary>
+            Begin a new timed operation. The return value must be disposed to complete the operation.
+            </summary>
+            <param name="messageTemplate">A log message describing the operation, in message template format.</param>
+            <param name="args">Arguments to the log message. These will be stored and captured only when the
+            operation completes, so do not pass arguments that are mutated during the operation.</param>
+            <returns>An <see cref="T:SerilogTimings.Operation"/> object.</returns>
+        </member>
+        <member name="T:SerilogTimings.Extensions.LoggerOperationExtensions">
+            <summary>
+            Extends <see cref="T:Serilog.ILogger"/> with timed operations.
+            </summary>
+        </member>
+        <member name="M:SerilogTimings.Extensions.LoggerOperationExtensions.TimeOperation(Serilog.ILogger,System.String,System.Object[])">
+            <summary>
+            Begin a new timed operation. The return value must be disposed to complete the operation.
+            </summary>
+            <param name="logger">The logger through which the timing will be recorded.</param>
+            <param name="messageTemplate">A log message describing the operation, in message template format.</param>
+            <param name="args">Arguments to the log message. These will be stored and captured only when the
+            operation completes, so do not pass arguments that are mutated during the operation.</param>
+            <returns>An <see cref="T:SerilogTimings.Operation"/> object.</returns>
+        </member>
+        <member name="M:SerilogTimings.Extensions.LoggerOperationExtensions.BeginOperation(Serilog.ILogger,System.String,System.Object[])">
+            <summary>
+            Begin a new timed operation. The return value must be completed using <see cref="M:SerilogTimings.Operation.Complete"/>,
+            or disposed to record abandonment.
+            </summary>
+            <param name="logger">The logger through which the timing will be recorded.</param>
+            <param name="messageTemplate">A log message describing the operation, in message template format.</param>
+            <param name="args">Arguments to the log message. These will be stored and captured only when the
+            operation completes, so do not pass arguments that are mutated during the operation.</param>
+            <returns>An <see cref="T:SerilogTimings.Operation"/> object.</returns>
+        </member>
+        <member name="M:SerilogTimings.Extensions.LoggerOperationExtensions.OperationAt(Serilog.ILogger,Serilog.Events.LogEventLevel,System.Nullable{Serilog.Events.LogEventLevel})">
+            <summary>
+            Configure the logging levels used for completion and abandonment events.
+            </summary>
+            <param name="logger">The logger through which the timing will be recorded.</param>
+            <param name="completion">The level of the event to write on operation completion.</param>
+            <param name="abandonment">The level of the event to write on operation abandonment; if not
+            specified, the <paramref name="completion"/> level will be used.</param>
+            <returns>An object from which timings with the configured levels can be made.</returns>
+            <remarks>If neither <paramref name="completion"/> nor <paramref name="abandonment"/> is enabled
+            on the logger at the time of the call, a no-op result is returned.</remarks>
+        </member>
+    </members>
+</doc>
