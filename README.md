@@ -13,7 +13,7 @@ Seller sells and Amazon ships. Seller sends bulk products to Amazon’s fulfillm
 Seller lists the products on Amazon while handling storage and all aspects of order fulfillment. When products are sold, the integration imports FBM orders as sales orders. The seller is required to pick, pack, and ship products included on such orders. Shipment/Fulfilment details needs to be submitted back to Amazon using the integration. Amazon Orders with status Unshipped are retrieved during the import process.
 
 ### Prerequisites
-* Acumatica 2019 R2 (18.210.0026+) or higher
+* Acumatica 2019 R2 (19.210.0026+) or higher
 * Inventory/Stock, Products and Customers has to be setup prior using this integration. Product/Stock Item needs to be setup in Acumatica by either having matching Inventory ID OR Cross-Reference (Alternate ID) same as Amazon SellerSKU/ASIN (specified in Marketplace Configuration Field Mapping) 
 * This integration requires “Amazon Seller Professional Account” credentials for configuring integrations. Please visit (https://developer.amazonservices.com/) for more information on getting MWS Credentials.
 
@@ -57,7 +57,7 @@ Marketplace Configuration Screen is used to control various features of the Inte
 | **Integration ID** | You can set a unique value that can be used to identify all the configuration details in other screens related to this integration ID. |
 | **Status** | This field is used to mark a specific Integration as Active / Inactive. If the integration is marked as Inactive, then system will not display the details/logs related to this specific integration. |
 | **Integration Type** | Available Integration Types : <ul><li>Amazon FBA</li><li>Amazon.ca FBA</li><li>Amazon.co.uk FBA</li><li>Amazon.de FBA</li><li>Amazon.jp FBA</li><li>Amazon.in FBA</li><li>Amazon FBM</li></ul> |
-| **Guest Customer ID** | All imported Amazon orders will be associated to this specified customer.  |
+| **Customer ID** | All imported Amazon orders for this integration type will be associated to this specified customer.  |
 | **Warehouse** | All active warehouses will be loaded from the system to select specific warehouse in Acumatica for order processing. All the imported orders under this specific integration will be associated to this configured warehouse by default. |
 | **Order Type** | All the active order types will be loaded from the system to select specific Order type. Based on the selected integration type these order type template will be loaded for selection. <ul><li>For FBA integrations types the system will display the “IN – Invoice” type templates for the selection, whereas for FBM Integration type it will display “SO – Sales Order” template order types.</li></ul> |
 | **Seller ID** | This field is used to configure the Amazon Marketplace Seller ID. |
