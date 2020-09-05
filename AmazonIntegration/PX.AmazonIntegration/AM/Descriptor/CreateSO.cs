@@ -83,6 +83,7 @@ namespace AmazonIntegration
                     newOrder.OrderType = orderParams.objSOAmazonSetup.OrderType;
                     newOrder = (SOOrder)orderParams.objSOOrderEntry.Document.Cache.Insert(newOrder);
                     newOrder.CustomerID = orderParams.objSOAmazonSetup.GuestCustID;
+                    newOrder.CuryID = orderParams.objSOAmazonSetup.DefaultCurrency;
                 }
                 else
                     throw new PXException(SOMessages.guestCustomerErrorMsg);
@@ -293,7 +294,7 @@ namespace AmazonIntegration
                         orderTax.TaxRate = taxRate;
                         orderParams.objSOOrderEntry.Taxes.Cache.Update(orderTax);
                         orderParams.objSOOrderEntry.Document.SetValueExt<SOOrder.curyTaxTotal>(orderParams.objSOOrderEntry.Document.Current, taxtotal);
-                        orderTotal = orderParams.objSOOrderEntry.Document.Current.OrderTotal + orderTax.CuryTaxAmt;
+                        orderTotal = orderParams.objSOOrderEntry.Document.Current.CuryOrderTotal + orderTax.CuryTaxAmt;
                         orderParams.objSOOrderEntry.Document.SetValueExt<SOOrder.curyOrderTotal>(orderParams.objSOOrderEntry.Document.Current, orderTotal);
                         orderParams.objSOOrderEntry.Document.Cache.Update(orderParams.objSOOrderEntry.Document.Current);
                     }
@@ -302,7 +303,7 @@ namespace AmazonIntegration
                         orderTax.CuryTaxAmt = taxtotal;
                         orderParams.objSOOrderEntry.Taxes.Cache.Update(orderTax);
                         orderParams.objSOOrderEntry.Document.SetValueExt<SOOrder.curyTaxTotal>(orderParams.objSOOrderEntry.Document.Current, taxtotal);
-                        orderTotal = orderParams.objSOOrderEntry.Document.Current.OrderTotal + orderTax.CuryTaxAmt;
+                        orderTotal = orderParams.objSOOrderEntry.Document.Current.CuryOrderTotal + orderTax.CuryTaxAmt;
                         orderParams.objSOOrderEntry.Document.SetValueExt<SOOrder.curyOrderTotal>(orderParams.objSOOrderEntry.Document.Current, orderTotal);
                         orderParams.objSOOrderEntry.Document.Cache.Update(orderParams.objSOOrderEntry.Document.Current);
                     }

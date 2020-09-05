@@ -74,6 +74,18 @@ namespace AmazonIntegration
 
         #endregion
 
+        #region Default Currency
+
+        [PXString]
+        [PXUIField(DisplayName = "Default Currency")]
+        [PXDBScalar(typeof(Search<
+            Customer.curyID,
+            Where<Customer.bAccountID, Equal<SOAmazonSetup.guestCustID>>>))]
+        public string DefaultCurrency { get; set; }
+        public abstract class defaultCurrency : PX.Data.BQL.BqlString.Field<defaultCurrency> { }
+
+        #endregion
+
         #region DfltWarehouseID
 
         public abstract class dfltWarehouseID : IBqlField { }
