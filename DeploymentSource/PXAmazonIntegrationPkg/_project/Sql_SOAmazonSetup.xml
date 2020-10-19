@@ -1,6 +1,5 @@
 ﻿<Sql TableName="SOAmazonSetup" TableSchemaXml="#CDATA">
-    <CDATA name="TableSchemaXml">
-    <![CDATA[<table name="SOAmazonSetup">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="SOAmazonSetup">
   <col name="CompanyID" type="Int" default="Zero" />
   <col name="IntegrationID" type="NVarChar(30)" />
   <col name="Status" type="Bit" />
