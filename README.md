@@ -1,7 +1,17 @@
-[![Project Status](http://opensource.box.com/badges/active.svg)](http://opensource.box.com/badges)
+[![Project Status](http://opensource.box.com/badges/deprecated.svg)](http://opensource.box.com/badges)
 
 Amazon Marketplace Integration
 ==================================
+
+# 🚫 This repository has been archived
+
+As of 2023 R1; customers are advised to use native Amazon integration.
+
+Please refer [Amazon Integration - Information and Managed Availability Sign-up](https://community.acumatica.com/retail-commerce-113/amazon-integration-information-and-managed-availability-sign-up-8235?tid=8235&fid=113) for additional information.
+
+- - - -
+- - - -
+
 This integration supports Fulfillment by Amazon (FBA) and Fulfillment by Merchant (FBM) fulfillment channels. 
 
 Using this integration user can import orders placed on Amazon Marketplace into Acumatica and can transfer order fulfillment details from Acumatica to Amazon Marketplace for FBM type of orders.
